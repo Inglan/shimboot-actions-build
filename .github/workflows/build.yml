@@ -4,9 +4,9 @@ on: [push]
 
 jobs:
   build_and_test:
-    runs-on: ubuntu-latest
+    runs-on: debain-latest
     steps:
-      - name: npm install, build, and test
+      - name: Build
         run: |
           git clone https://github.com/ading2210/shimboot
           cd shimboot
