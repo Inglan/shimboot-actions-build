@@ -1,0 +1,14 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build_and_test:
+    runs-on: debian-latest
+    steps:
+      - name: npm install, build, and test
+        run: |
+          git clone https://github.com/ading2210/shimboot
+          cd shimboot
+          sudo ./build_complete.sh dedede
+          tree
