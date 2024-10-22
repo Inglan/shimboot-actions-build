@@ -11,5 +11,23 @@ jobs:
           sudo apt update && sudo apt upgrade -y
           git clone https://github.com/ading2210/shimboot
           cd shimboot
-          sudo ./build_complete.sh dedede
-          tree
+          mkdir output
+          sudo ./build_complete.sh dedede release=unstable desktop=gnome
+          cd data
+          zip shimboot_dedede.zip shimboot_dedede.bin
+          mv shimboot_dedede.zip ../output
+          cd ..
+          rm -rf data
+          sudo ./build_complete.sh octopus release=unstable desktop=gnome
+          cd data
+          zip shimboot_octopus.zip shimboot_octopus.bin
+          mv shimboot_octopus.zip ../output
+          cd ..
+          rm -rf data
+          sudo ./build_complete.sh nissa release=unstable desktop=gnome
+          cd data
+          zip shimboot_nissa.zip shimboot_nissa.bin
+          mv shimboot_nissa.zip ../output
+          cd ..
+          rm -rf data
+          ls output
