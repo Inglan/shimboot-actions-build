@@ -14,9 +14,9 @@ jobs:
           mkdir output
           sudo ./build_complete.sh dedede release=unstable desktop=gnome
           cd data
-          zip shimboot_dedede.zip shimboot_dedede.bin
-          mv shimboot_dedede.zip ../output
+          sudo zip shimboot_dedede.zip shimboot_dedede.bin
+          sudo mv shimboot_dedede.zip ../output
           cd ..
-          rm -rf data
+          sudo rm -rf data
           ls
           ls output
